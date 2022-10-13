@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/components/index.ts'),
-      name: 'Rafi',
-      fileName: (format) => `rafi.${format}.js`
+      name: 'Guld',
+      fileName: (format) => `guld.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],

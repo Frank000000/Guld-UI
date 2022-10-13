@@ -1,16 +1,16 @@
 {
   "name": "guld-ui",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Zebin Yang",
   "license": "ISC",
-  "main": "./dist/rafi.umd.js",
-  "module": "./dist/rafi.es.js",
+  "main": "./dist/guld.umd.js",
+  "module": "./dist/guld.es.js",
 
   "exports": {
     ".": {
-      "import": "./dist/rafi.es.js",
-      "require": "./dist/rafi.umd.js"
+      "import": "./dist/guld.es.js",
+      "require": "./dist/guld.umd.js"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",

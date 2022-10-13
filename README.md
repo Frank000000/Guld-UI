@@ -18,20 +18,19 @@ Using `yarn` or `pnpm`:
 
 ```bash
 # with yarn
-yarn add rafi-ui
+yarn add guld-ui
 
 # with pnpm
-pnpm add rafi-ui
+pnpm add guld-ui
 ```
 
 ## Quickstart
 
 ```js
-import Rafi from './components'
+import Guld from './components'
 import { createApp } from 'vue';
 const app = createApp(App)
-app.use(Rafi)
-const app = createApp();
+app.use(Guld)
 
 // use
 <g-button class="button">button</g-button>

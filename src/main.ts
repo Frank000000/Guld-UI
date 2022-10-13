@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 // import './style.css'
 import App from './App.vue'
-import Rafi from './components'
+import Guld from './components'
 
 const app = createApp(App)
-app.use(Rafi)
+app.use(Guld)
 
 app.mount('#app')
