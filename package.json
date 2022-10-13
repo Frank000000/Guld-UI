@@ -1,8 +1,8 @@
 {
   "name": "guld-ui",
   "private": false,
-  "version": "0.0.1",
-  "author": "Rafi Yang",
+  "version": "0.0.2",
+  "author": "Zebin Yang",
   "license": "ISC",
   "main": "./dist/rafi.umd.js",
   "module": "./dist/rafi.es.js",
