@@ -1,8 +1,23 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "guld-ui",
+  "private": false,
+  "version": "0.0.1",
+  "author": "Rafi Yang",
+  "license": "ISC",
+  "main": "./dist/rafi.umd.js",
+  "module": "./dist/rafi.es.js",
+
+  "exports": {
+    ".": {
+      "import": "./dist/rafi.es.js",
+      "require": "./dist/rafi.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -18,5 +33,9 @@
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
-  }
+  },
+  "files": [
+    "package.json",
+    "dist"
+  ]
 }

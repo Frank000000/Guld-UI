@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import Input from './index.vue'
 
-Input.name = 'r-input'
+Input.name = 'g-input'
 
 Input.install = (app: App) => {
   app.component(Input.name, Input)

@@ -4,8 +4,8 @@
 
 <template>
   <div>
-    <r-button class="logo">123</r-button>
-    <r-input class="input"></r-input>
+    <g-button class="logo">123</g-button>
+    <g-input class="input"></g-input>
   </div>
 </template>
 

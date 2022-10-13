@@ -34,6 +34,6 @@ app.use(Rafi)
 const app = createApp();
 
 // use
-<r-button class="button">button</r-button>
+<g-button class="button">button</g-button>
 
 ```
