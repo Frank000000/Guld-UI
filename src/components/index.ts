@@ -1,7 +1,8 @@
 import { App } from 'vue'
 import Button from './Button'
+import Input from './Input'
 
-const components = [Button]
+const components = [Button,Input]
 
 const install = (app: App) => {
   components.map(item => {
