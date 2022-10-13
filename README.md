@@ -31,9 +31,9 @@ import Rafi from './components'
 import { createApp } from 'vue';
 const app = createApp(App)
 app.use(Rafi)
-
 const app = createApp();
 
-// 3. Register the components you need
-app.use(button);
+// use
+<r-button class="button">button</r-button>
+
 ```
