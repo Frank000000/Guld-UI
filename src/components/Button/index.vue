@@ -2,7 +2,7 @@
   <button class="button"><slot /></button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .button {
   display: block;
   height: 32px;
@@ -13,6 +13,7 @@
   min-width: 100px;
   font-size: 14px;
   color: #fff;
-  background: #0ABCAA;
+  // background: #0ABCAA;
+  background:#646cffaa;
 }
 </style>
