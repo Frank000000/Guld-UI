@@ -27,11 +27,10 @@ pnpm add rafi-ui
 ## Quickstart
 
 ```js
+import Rafi from './components'
 import { createApp } from 'vue';
-// 1. Import the components you need
-import { button } from 'rafi-ui';
-// 2. Import the components style
-import 'rafi-ui/dist/style.css';
+const app = createApp(App)
+app.use(Rafi)
 
 const app = createApp();
 

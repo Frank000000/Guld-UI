@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <e-button class="logo">123</e-button>
+    <r-button class="logo">123</r-button>
   </div>
 </template>
 
