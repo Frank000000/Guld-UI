@@ -27,7 +27,8 @@ pnpm add guld-ui
 ## Quickstart
 
 ```js
-import Guld from './components'
+import Guld from 'guld-ui'
+import 'guld-ui/dist/style.css'
 import { createApp } from 'vue';
 const app = createApp(App)
 app.use(Guld)
