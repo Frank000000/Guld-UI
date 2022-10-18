@@ -1,19 +1,57 @@
 <template>
-  <button class="button"><slot /></button>
+  <div class="btn btn__primary"><p>Button1</p></div>
+  <div class="btn btn__secondary"><p>Button2</p></div>
 </template>
+<script lang="ts">
+  
+</script>
 
 <style lang="scss" scoped>
-.button {
-  display: block;
-  height: 32px;
-  line-height: 32px;
-  border: 0;
-  border-radius: 2px;
-  text-align: center;
-  min-width: 100px;
-  font-size: 14px;
-  color: #fff;
-  // background: #0ABCAA;
-  background:#646cffaa;
+$shadow: .3rem .3rem .6rem var(--greyLight-2);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
+.btn {
+  width: 15rem;
+  height: 4rem;
+  border-radius: 1rem;
+  box-shadow: $shadow;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s ease;
+
+  &__primary {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    background: var(--primary);
+    box-shadow:inset .2rem .2rem 1rem var(--primary-light), 
+              inset -.2rem -.2rem 1rem var(--primary-dark),
+              $shadow;
+    color: var(--greyLight-1);
+
+    &:hover { color: var(--white); }
+    &:active {
+      box-shadow:inset .2rem .2rem 1rem var(--primary-dark), 
+             inset -.2rem -.2rem 1rem var(--primary-light);
+    }
+  }
+
+  &__secondary {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    color: var(--greyDark);
+    &:hover { color: var(--primary); }
+    &:active {
+      box-shadow: $inner-shadow;
+    }
+    margin-top: 2rem;
+  }
+
+  p { 
+    font-size: 1.6rem;
+  }
 }
+
 </style>
