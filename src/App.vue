@@ -5,7 +5,7 @@
 <template>
   <div>
     <g-button class="logo">123</g-button>
-    <g-input class="input"></g-input>
+    <!-- <g-input class="input"></g-input> -->
   </div>
 </template>
 
