@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, PropType } from 'vue';
+import { PropType } from 'vue';
 
 type sizeType = 'normal' | 'small' | 'large';
 type btnType = 'primary' | 'success' | 'error' | 'warn' | 'info';

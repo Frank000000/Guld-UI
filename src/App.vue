@@ -1,6 +1,7 @@
 <template>
   <div>
-    <g-button type="error" size="large" disabled round>123</g-button>
+    <g-button type="error" size="large" disabled round>button</g-button>
+    <g-input style="margin-top:20px"></g-input>
   </div>
 </template>
 
