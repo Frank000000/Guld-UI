@@ -1,15 +1,21 @@
 <template>
-  <div class="btn btn__primary"><p>Button1</p></div>
-  <div class="btn btn__secondary"><p>Button2</p></div>
+  <div class="btn btn__primary">
+    <p>Button1</p>
+  </div>
+  <div class="btn btn__secondary">
+    <p>Button2</p>
+  </div>
 </template>
-<script lang="ts">
-  
+
+<script lang="ts" setup>
+
 </script>
 
 <style lang="scss" scoped>
 $shadow: .3rem .3rem .6rem var(--greyLight-2);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
-inset -.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
+  inset -.2rem -.2rem .5rem var(--white);
+
 .btn {
   width: 15rem;
   height: 4rem;
@@ -26,15 +32,18 @@ inset -.2rem -.2rem .5rem var(--white);
     grid-column: 1 / 2;
     grid-row: 4 / 5;
     background: var(--primary);
-    box-shadow:inset .2rem .2rem 1rem var(--primary-light), 
-              inset -.2rem -.2rem 1rem var(--primary-dark),
-              $shadow;
+    box-shadow: inset .2rem .2rem 1rem var(--primary-light),
+      inset -.2rem -.2rem 1rem var(--primary-dark),
+      $shadow;
     color: var(--greyLight-1);
 
-    &:hover { color: var(--white); }
+    &:hover {
+      color: var(--white);
+    }
+
     &:active {
-      box-shadow:inset .2rem .2rem 1rem var(--primary-dark), 
-             inset -.2rem -.2rem 1rem var(--primary-light);
+      box-shadow: inset .2rem .2rem 1rem var(--primary-dark),
+        inset -.2rem -.2rem 1rem var(--primary-light);
     }
   }
 
@@ -42,16 +51,20 @@ inset -.2rem -.2rem .5rem var(--white);
     grid-column: 1 / 2;
     grid-row: 5 / 6;
     color: var(--greyDark);
-    &:hover { color: var(--primary); }
+
+    &:hover {
+      color: var(--primary);
+    }
+
     &:active {
       box-shadow: $inner-shadow;
     }
+
     margin-top: 2rem;
   }
 
-  p { 
+  p {
     font-size: 1.6rem;
   }
 }
-
 </style>
