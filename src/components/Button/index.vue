@@ -11,7 +11,8 @@
           'is-warn': type === 'warn',
           'is-info': type === 'info',
           'is-disabled': disabled,
-          'is-long': long
+          'is-long': long,
+          'is-round': round
       }
   ]">
     <slot></slot>
@@ -37,9 +38,13 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  long:{
-    type:Boolean,
-    default:false
+  long: {
+    type: Boolean,
+    default: false
+  },
+  round: {
+    type: Boolean,
+    default: false
   }
 });
 </script>
@@ -60,8 +65,12 @@ const props = defineProps({
   cursor: not-allowed;
 }
 
-.btn-style.is-long{
+.btn-style.is-long {
   width: 100%;
+}
+
+.btn-style.is-round {
+  border-radius: 999999999px
 }
 
 .btn-style.is-normal {
