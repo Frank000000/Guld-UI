@@ -1,23 +1,14 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div>
-    <g-button class="logo">123</g-button>
-    <!-- <g-input class="input"></g-input> -->
+    <g-button type="error" size="large" disabled long>123</g-button>
   </div>
 </template>
 
-<style scoped lang="scss">
+<script setup lang="ts">
+import { type } from 'os';
 
-// .logo {
-//   will-change: filter;
-// }
-// .logo:hover {
-//   filter: drop-shadow(0 0 1em #646cffaa);
-// }
-.input{
-  // height: 100px;./index.vue
-}
+
+</script>
+
+<style scoped lang="scss">
 </style>

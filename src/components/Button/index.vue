@@ -1,70 +1,108 @@
 <template>
-  <div class="btn btn__primary">
-    <p>Button1</p>
-  </div>
-  <div class="btn btn__secondary">
-    <p>Button2</p>
-  </div>
+  <button :class="[
+      'btn-style',
+      {
+          'is-large': size === 'large',
+          'is-normal': size === 'normal',
+          'is-small': size === 'small',
+          'is-primary': type === 'primary',
+          'is-success': type === 'success',
+          'is-error': type === 'error',
+          'is-warn': type === 'warn',
+          'is-info': type === 'info',
+          'is-disabled': disabled,
+          'is-long': long
+      }
+  ]">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts" setup>
+import { defineProps, PropType } from 'vue';
 
+type sizeType = 'normal' | 'small' | 'large';
+type btnType = 'primary' | 'success' | 'error' | 'warn' | 'info';
+
+const props = defineProps({
+  size: {
+    type: String as PropType<sizeType>,
+    default: 'normal'
+  },
+  type: {
+    type: String as PropType<btnType>,
+    default: 'primary'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  long:{
+    type:Boolean,
+    default:false
+  }
+});
 </script>
 
-<style lang="scss" scoped>
-$shadow: .3rem .3rem .6rem var(--greyLight-2);
-$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
-  inset -.2rem -.2rem .5rem var(--white);
-
-.btn {
-  width: 15rem;
-  height: 4rem;
-  border-radius: 1rem;
-  box-shadow: $shadow;
-  justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+<style scoped lang="scss">
+.btn-style {
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 14px;
   cursor: pointer;
-  transition: .3s ease;
+}
 
-  &__primary {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-    background: var(--primary);
-    box-shadow: inset .2rem .2rem 1rem var(--primary-light),
-      inset -.2rem -.2rem 1rem var(--primary-dark),
-      $shadow;
-    color: var(--greyLight-1);
+.btn-style.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
-    &:hover {
-      color: var(--white);
-    }
+.btn-style.is-long{
+  width: 100%;
+}
 
-    &:active {
-      box-shadow: inset .2rem .2rem 1rem var(--primary-dark),
-        inset -.2rem -.2rem 1rem var(--primary-light);
-    }
-  }
+.btn-style.is-normal {
+  padding: 8px 18px;
+}
 
-  &__secondary {
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-    color: var(--greyDark);
+.btn-style.is-small {
+  padding: 6px 14px;
+}
 
-    &:hover {
-      color: var(--primary);
-    }
+.btn-style.is-large {
+  padding: 10px 22px;
+}
 
-    &:active {
-      box-shadow: $inner-shadow;
-    }
+.btn-style.is-primary {
+  background-color: #2d8cf0;
+  border-color: #2d8cf0;
+  color: #ffffff;
+}
 
-    margin-top: 2rem;
-  }
+.btn-style.is-success {
+  background-color: #47cb89;
+  border-color: #47cb89;
+  color: #ffffff;
+}
 
-  p {
-    font-size: 1.6rem;
-  }
+.btn-style.is-error {
+  background-color: #f16643;
+  border-color: #f16643;
+  color: #ffffff;
+}
+
+.btn-style.is-warn {
+  background-color: #f90;
+  border-color: #f90;
+  color: #ffffff;
+}
+
+.btn-style.is-info {
+  background-color: #fff;
+  border-color: #dcdee2;
+  color: #333333;
 }
 </style>
