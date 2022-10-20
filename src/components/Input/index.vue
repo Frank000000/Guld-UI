@@ -1,14 +1,42 @@
 <template>
   <div class="search">
-    <input type="text" class="search__input" placeholder="Search...">
+    <input :type='type' :placeholder="placeholder" :disabled="disabled"
+      :class="['search__input',{ 'is-disabled': disabled }]" :readonly="disabled" @input="handleInput"
+      @change="handleChange">
     <div class="search__icon">
-      <!-- <Icon icon="akar-icons:search"></Icon> -->
+      <Icon icon="akar-icons:search"></Icon>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  // import { Icon } from '@iconify/vue';
+import { Icon } from '@iconify/vue';
+import { PropType, ref, defineEmits, defineProps } from 'vue';
+const emit = defineEmits(['change'])
+
+const props = defineProps({
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  placeholder: {
+    type: String,
+    default: '请输入...'
+  },
+  type: {
+    type: String,
+    default: 'password'
+  }
+});
+
+const handleInput = (event: any) => {
+  let { value } = event.target
+}
+
+const handleChange = (event: any) => {
+  emit('change', event.target.value)
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -23,6 +51,11 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
   position: relative;
   display: flex;
   align-items: center;
+
+  .is-disabled {
+    opacity: 0.5;
+    // cursor: not-allowed;
+  }
 
   &__input {
     width: 20.4rem;
