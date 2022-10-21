@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
 import { PropType, ref, defineEmits, defineProps } from 'vue';
-const emit = defineEmits(['change'])
+const emit = defineEmits(['change', 'input'])
 
 const props = defineProps({
   disabled: {
@@ -21,7 +21,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: '请输入...'
+    default: ''
   },
   type: {
     type: String,
@@ -31,10 +31,12 @@ const props = defineProps({
 
 const handleInput = (event: any) => {
   let { value } = event.target
+  emit('input', value)
 }
 
 const handleChange = (event: any) => {
-  emit('change', event.target.value)
+  let { value } = event.target
+  emit('change', value)
 }
 
 </script>
@@ -92,5 +94,16 @@ $inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2),
     color: var(--greyDark);
     transition: .3s ease;
   }
+}
+
+/* Chrome浏览器 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox浏览器 */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 </style>
