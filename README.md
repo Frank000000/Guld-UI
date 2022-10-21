@@ -58,6 +58,7 @@ long | boolean | false,true | false | 横向填充满
 type | string | 原生input所有type值（除了textarea） | password | 类型
 placeholder | string | - | - | 输入占位文本
 disabled | boolean | true,false | false | 是否禁用
+readonly | boolean | true,false | false | 是否只读
 
 #### input事件
 事件名 | 说明 | 参数

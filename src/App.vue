@@ -1,9 +1,8 @@
 <template>
   <div>
-    <g-button type="error" size="large" disabled round>button</g-button>
-    <g-input style="margin-top:20px" type="password"   @input="handleInput" @change="handleChange" v-model="inputVal">
+    <g-button type="error" size="large" :disabled="false" round>button</g-button>
+    <g-input style="margin-top:20px" type="number"   @input="handleInput" @change="handleChange" v-model="inputVal" :readonly='true'>
     </g-input>
-    <h2>{{inputVal}}</h2>
   </div>
 </template>
 

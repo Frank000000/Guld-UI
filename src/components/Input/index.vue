@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <input :type='type' :placeholder="placeholder" :disabled="disabled"
-      :class="['search__input',{ 'is-disabled': disabled }]" :readonly="disabled" @input="handleInput"
+      :class="['search__input',{ 'is-disabled': disabled }]" :readonly="readonly" @input="handleInput"
       @change="handleChange">
     <div class="search__icon">
       <Icon icon="akar-icons:search"></Icon>
@@ -16,6 +16,10 @@ const emit = defineEmits(['change', 'input'])
 
 const props = defineProps({
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  readonly: {
     type: Boolean,
     default: false
   },
