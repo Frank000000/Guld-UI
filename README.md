@@ -63,5 +63,5 @@ readonly | boolean | true,false | false | 是否只读
 #### input事件
 事件名 | 说明 | 参数
 :---: | :---: | :---:
-change | 仅当 modelValue 改变时，当输入框失去焦点或用户按Enter时触发 | (value: string | number)
-input | 在 Input 值改变时触发 | (value: string | number)
+change | 仅当 modelValue 改变时，当输入框失去焦点或用户按Enter时触发 | value: string | number
+input | 在 Input 值改变时触发 | value: string | number
