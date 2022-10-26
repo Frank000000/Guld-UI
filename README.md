@@ -11,7 +11,7 @@ Using `npm` to install:
 
 ```bash
 # install latest Vant for Vue 3 project
-npm install selleri-ui
+npm install guld-ui
 ```
 
 Using `yarn` or `pnpm`:
