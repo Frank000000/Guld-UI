@@ -1,7 +1,7 @@
 {
   "name": "guld-ui",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Zebin Yang",
   "license": "ISC",
   "main": "./dist/guld.umd.js",
