@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
-import { PropType, ref, defineEmits, defineProps } from 'vue';
+// import { PropType, ref, defineEmits, defineProps } from 'vue';
 const emit = defineEmits(['change', 'input'])
 
 const props = defineProps({
