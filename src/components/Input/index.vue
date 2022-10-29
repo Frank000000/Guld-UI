@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <input :type='type' :placeholder="placeholder" :disabled="disabled"
-      :class="['search__input',{ 'is-disabled': disabled }]" :readonly="readonly" @input="handleInput"
+      :class="['search__input',     { 'is-disabled': disabled }]" :readonly="readonly" @input="handleInput"
       @change="handleChange">
     <div class="search__icon">
       <Icon icon="akar-icons:search"></Icon>
@@ -10,8 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Icon } from '@iconify/vue';
-// import { PropType, ref, defineEmits, defineProps } from 'vue';
+import { Icon } from '@iconify/vue'
 const emit = defineEmits(['change', 'input'])
 
 const props = defineProps({
