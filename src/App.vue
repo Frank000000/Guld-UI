@@ -4,6 +4,7 @@
     <g-input style="margin-top:20px" type="number" @input="handleInput" @change="handleChange" v-model="inputVal"
       :readonly='true'>
     </g-input>
+    <g-calendar style="margin-top: 30px;"></g-calendar>
   </div>
 </template>
 
