@@ -41,7 +41,9 @@ app.use(Guld)
 <!-- Usage -->
 
 ## Button
+
 - 属性
+
 属性名 | 类型 | 可选值 | 默认值 | 描述
 :---: | :---: | :---: | :---:| :---:
 size | string | small,normal,large | normal | 控制button大小
@@ -52,7 +54,9 @@ disabled | boolean | false,true | false | 按钮的点击状态
 long | boolean | false,true | false | 横向填充满
 
 ## Input
+
 - 属性
+
 属性名 | 类型 | 可选值 | 默认值 | 描述
 :---: | :---: | :---: | :---:| :---:
 type | string | 原生input所有type值（除了textarea） | password | 类型
