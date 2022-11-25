@@ -2,17 +2,17 @@
   <div class="calendar-container">
     <div class="calendar-header">
       <h1>
-        November
+        {{ thisMonth }}
         <button>▾</button>
       </h1>
-      <p>2018</p>
+      <p>{{ thisYear }}</p>
     </div>
-    <div class="calendar"><span class="day-name">Mon</span><span class="day-name">Tue</span><span
-        class="day-name">Wed</span><span class="day-name">Thu</span><span class="day-name">Fri</span><span
-        class="day-name">Sat</span><span class="day-name">Sun</span>
-      <div class="day day--disabled">30</div>
-      <div class="day day--disabled">31</div>
-      <div class="day">1</div>
+    <div class="calendar">
+      <span class="day-name" v-for="(item, idx) in week" :key="idx">{{ item }}</span>
+      <!-- <div class="day day--disabled">30</div>
+      <div class="day day--disabled">31</div> -->
+
+      <!-- <div class="day">1</div>
       <div class="day">2</div>
       <div class="day">3</div>
       <div class="day">4</div>
@@ -42,9 +42,12 @@
       <div class="day">28</div>
       <div class="day">29</div>
       <div class="day">30</div>
-      <div class="day">31</div>
-      <div class="day day--disabled">1</div>
-      <div class="day day--disabled">2</div>
+      <div class="day">31</div> -->
+
+      <div class="day" v-for="(item,idx) in days" :key="idx">{{item}}</div>
+
+      <!-- <div class="day day--disabled">1</div>
+      <div class="day day--disabled">2</div> -->
       <section class="task task--warning">Projects</section>
       <section class="task task--danger">Design Sprint</section>
       <section class="task task--primary">Product Checkup 1
@@ -59,6 +62,40 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+import dayjs from 'dayjs'
+
+const week = ['Sun', 'Mon', 'Tus', 'Wed', 'Thu', 'Fri', 'Sat']
+
+// get thisYear
+let now = dayjs()
+const thisYear = ref('2006')
+thisYear.value = now.format('YYYY')
+console.log(thisYear.value);
+
+
+const thisMonth = ref('September')
+thisMonth.value = now.format('MM')
+console.log(thisMonth.value);
+
+const d = new Date();
+console.log('d', d);
+
+console.log('how many days this month::', new Date(Number(thisYear.value), Number(thisMonth.value), 0).getDate());
+console.log('what day is it today::', d.getDay());
+
+const calculateDays = () => {
+  const dayBox = []
+  const dayCount = new Date(Number(thisYear.value), Number(thisMonth.value), 0).getDate()
+  for (let i = 1; i <= dayCount; i++) {
+    const a = i;
+    dayBox.push(i)
+  }
+  return dayBox
+}
+const days = calculateDays()
+
+
 
 </script>
 
