@@ -1,8 +1,7 @@
 <template>
   <div class="it-select" @click="openSelect">
-    <icon-openmoji:folded-hands />
-    <span class="it-select-input" @click.stop="openSelect">{{ fillName }}</span>
-    <span :class="['triangle-down', { rotate: rotate }]" @click="openSelect"></span>
+    <span class="it-select-input">{{fillName}}</span>
+    <icon-quill:chevron-down :class="['triangle-down', { rotate: rotate }]"/>
     <div :class="[
       'it-select-options-panel',
       showOptions ? 'show' : 'hidden',
@@ -18,15 +17,15 @@
 import { ref } from 'vue'
 const options = ref([
   {
-    title: '苹果',
+    title: 'apple',
     pkid: '1'
   },
   {
-    title: '栗子',
+    title: 'peach',
     pkid: '2'
   },
   {
-    title: '橘子',
+    title: 'orange',
     pkid: '3'
   }
 ])
@@ -35,6 +34,8 @@ let rotate = ref(false)
 let showOptions = ref(false)
 
 const openSelect = () => {
+  console.log(111);
+  
   showOptions.value = !showOptions.value
   rotate.value = !rotate.value
 }
@@ -52,7 +53,7 @@ const getValue = (title: any, pkid: any) => {
   box-shadow: none !important;
   border-radius: 10px;
   position: relative;
-
+  display: flex;
   .it-select-input {
     width: calc(100% - 20px);
     height: 100%;
@@ -60,28 +61,22 @@ const getValue = (title: any, pkid: any) => {
     text-align: center;
     cursor: pointer;
     border: none;
-    padding: 10px;
+    padding:0 10px;
     display: flex;
     align-items: center;
   }
-
   .triangle-down {
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 6px solid rgba(201, 201, 201, 1);
+    width: 10;
+    height: 10;
     position: absolute;
-    top: 50%;
-    right: 16px;
+    top: 50% ;
+    right: 8px;
     transform: translateY(-50%) rotate(0deg);
     transition: transform 0.3s ease-in-out;
   }
-
   .rotate {
     transform: translateY(-50%) rotate(180deg);
   }
-
   .it-select-options-panel {
     position: absolute;
     width: 100%;
@@ -94,7 +89,6 @@ const getValue = (title: any, pkid: any) => {
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 99;
-
     .it-select-option {
       padding: 0 22px;
       cursor: pointer;
@@ -107,22 +101,18 @@ const getValue = (title: any, pkid: any) => {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
     .it-select-option.check {
       color: #206ef2;
       background: #f5f7fe;
     }
-
     .it-select-option:hover {
       background: #f5f7fe;
       color: #206ef2;
     }
   }
-
   .show {
     display: block;
   }
-
   .hidden {
     display: none;
   }

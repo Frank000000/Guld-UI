@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@iconify-json/openmoji": "^1.1.15",
+    "@iconify-json/quill": "^1.1.2",
     "@iconify/vue": "^4.0.0",
     "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",
