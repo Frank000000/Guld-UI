@@ -1,5 +1,6 @@
 <template>
   <div class="it-select" @click="openSelect">
+    <icon-openmoji:folded-hands />
     <span class="it-select-input" @click.stop="openSelect">{{ fillName }}</span>
     <span :class="['triangle-down', { rotate: rotate }]" @click="openSelect"></span>
     <div :class="[
