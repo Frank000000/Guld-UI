@@ -1,10 +1,11 @@
 <template>
   <div>
-    <g-button type="error" size="large" :disabled="false" round>button</g-button>
+    <!-- <g-button type="error" size="large" :disabled="false" round>button</g-button>
     <g-input style="margin-top:20px" type="number" @input="handleInput" @change="handleChange" v-model="inputVal"
       :readonly='true'>
     </g-input>
-    <g-calendar style="margin-top: 30px;"></g-calendar>
+    <g-calendar style="margin-top: 30px;"></g-calendar> -->
+    <g-dropdown style="margin-top: 30px;"></g-dropdown>
   </div>
 </template>
 
