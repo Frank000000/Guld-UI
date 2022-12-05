@@ -1,12 +1,12 @@
 <template>
   <div class="it-select" @click="openSelect">
-    <span class="it-select-input">{{fillName}}</span>
-    <icon-quill:chevron-down :class="['triangle-down', { rotate: rotate }]"/>
+    <span class="it-select-input">{{ fillName }}</span>
+    <icon-quill:chevron-down :class="['triangle-down', { rotate: rotate }]" />
     <div :class="[
       'it-select-options-panel',
       showOptions ? 'show' : 'hidden',
     ]">
-      <p class="it-select-option" v-for="(item, idx) in options" :key="idx" @click="getValue(item.title, item.pkid)">
+      <p class="it-select-option" v-for="(item, idx) in options" :key="idx" @click="getValue(item.title, item.id)">
         {{ item.title }}
       </p>
     </div>
@@ -15,33 +15,43 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const options = ref([
-  {
-    title: 'apple',
-    pkid: '1'
-  },
-  {
-    title: 'peach',
-    pkid: '2'
-  },
-  {
-    title: 'orange',
-    pkid: '3'
+
+// let options:any=[]
+const props = defineProps({
+  options: {
+    type: Array
   }
-])
+})
+
+const animalOptions = ref()
+animalOptions.value = [
+  {
+    title: 'mouse',
+    id: '1'
+  },
+  {
+    title: 'dog',
+    id: '2'
+  },
+  {
+    title: 'cat',
+    id: '3'
+  }
+]
+
 let fillName = ref()
 let rotate = ref(false)
 let showOptions = ref(false)
 
 const openSelect = () => {
   console.log(111);
-  
+
   showOptions.value = !showOptions.value
   rotate.value = !rotate.value
 }
-const getValue = (title: any, pkid: any) => {
+const getValue = (title: String, id: String) => {
   fillName.value = title
-  console.log('title,pkid::', title.value);
+  console.log('title,id::', title);
 }
 </script>
 
@@ -54,6 +64,7 @@ const getValue = (title: any, pkid: any) => {
   border-radius: 10px;
   position: relative;
   display: flex;
+
   .it-select-input {
     width: calc(100% - 20px);
     height: 100%;
@@ -61,22 +72,25 @@ const getValue = (title: any, pkid: any) => {
     text-align: center;
     cursor: pointer;
     border: none;
-    padding:0 10px;
+    padding: 0 10px;
     display: flex;
     align-items: center;
   }
+
   .triangle-down {
     width: 10;
     height: 10;
     position: absolute;
-    top: 50% ;
+    top: 50%;
     right: 8px;
     transform: translateY(-50%) rotate(0deg);
     transition: transform 0.3s ease-in-out;
   }
+
   .rotate {
     transform: translateY(-50%) rotate(180deg);
   }
+
   .it-select-options-panel {
     position: absolute;
     width: 100%;
@@ -89,6 +103,7 @@ const getValue = (title: any, pkid: any) => {
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 99;
+
     .it-select-option {
       padding: 0 22px;
       cursor: pointer;
@@ -101,18 +116,22 @@ const getValue = (title: any, pkid: any) => {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
     .it-select-option.check {
       color: #206ef2;
       background: #f5f7fe;
     }
+
     .it-select-option:hover {
       background: #f5f7fe;
       color: #206ef2;
     }
   }
+
   .show {
     display: block;
   }
+
   .hidden {
     display: none;
   }

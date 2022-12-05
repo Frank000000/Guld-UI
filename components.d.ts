@@ -10,7 +10,6 @@ declare module '@vue/runtime-core' {
     Button: typeof import('./src/components/Button/index.vue')['default']
     Calendar: typeof import('./src/components/Calendar/index.vue')['default']
     DropDown: typeof import('./src/components/DropDown/index.vue')['default']
-    'IconOpenmoji:foldedHands': typeof import('~icons/openmoji/folded-hands')['default']
     'IconQuill:chevronDown': typeof import('~icons/quill/chevron-down')['default']
     Input: typeof import('./src/components/Input/index.vue')['default']
   }

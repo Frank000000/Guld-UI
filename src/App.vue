@@ -5,13 +5,29 @@
       :readonly='true'>
     </g-input>
     <g-calendar style="margin-top: 30px;"></g-calendar> -->
-    <g-dropdown style="margin-top: 30px;"></g-dropdown>
+    <g-dropdown style="margin-top: 30px;" :options="animalOptions"></g-dropdown>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 const inputVal = ref('啊好😄')
+const animalOptions = ref()
+animalOptions.value = [
+  {
+    title: 'mouse',
+    id: '1'
+  },
+  {
+    title: 'dog',
+    id: '2'
+  },
+  {
+    title: 'cat',
+    id: '3'
+  }
+]
+
 
 const handleInput = (e: any): void => {
   // let { value } = e.target
