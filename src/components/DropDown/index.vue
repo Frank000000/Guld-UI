@@ -6,22 +6,26 @@
       'it-select-options-panel',
       showOptions ? 'show' : 'hidden',
     ]">
-      <p class="it-select-option" v-for="(item, idx) in options" :key="idx" @click="getValue(item.title, item.id)">
+      <p class="it-select-option" v-for="(item, idx) in options" :key="idx" @click="getValue(item)">
         {{ item.title }}
       </p>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup  lang="ts">
 import { ref } from 'vue'
+//针对typescript，可以用这种
+const { options } = defineProps<{
+  options: ({title: string, id: string})[]
+}>()
 
 // let options:any=[]
-const props = defineProps({
-  options: {
-    type: Array
-  }
-})
+// const props = defineProps({
+//   options: {
+//     type: Array
+//   }
+// })
 
 const animalOptions = ref()
 animalOptions.value = [
@@ -43,15 +47,14 @@ let fillName = ref()
 let rotate = ref(false)
 let showOptions = ref(false)
 
-const openSelect = () => {
+const openSelect = ():void => {
   console.log(111);
-
   showOptions.value = !showOptions.value
   rotate.value = !rotate.value
 }
-const getValue = (title: String, id: String) => {
-  fillName.value = title
-  console.log('title,id::', title);
+const getValue = (item:any):void => {
+  fillName.value = item.title
+  console.log('title,id::', item);
 }
 </script>
 
