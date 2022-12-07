@@ -27,22 +27,6 @@ const { options } = defineProps<{
 //   }
 // })
 
-const animalOptions = ref()
-animalOptions.value = [
-  {
-    title: 'mouse',
-    id: '1'
-  },
-  {
-    title: 'dog',
-    id: '2'
-  },
-  {
-    title: 'cat',
-    id: '3'
-  }
-]
-
 let fillName = ref()
 let rotate = ref(false)
 let showOptions = ref(false)
@@ -133,10 +117,36 @@ const getValue = (item:any):void => {
 
   .show {
     display: block;
+    // animation-duration: .4s;
+    // animation-name:down;
+    // transform: translateY(100%);
   }
 
   .hidden {
     display: none;
+    // animation-duration: .4s;
+    // animation-name: up;
+    // transform: translateY(0%);
+  }
+
+  @keyframes down {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+  }
+
+  @keyframes up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
   }
 }
 </style>
